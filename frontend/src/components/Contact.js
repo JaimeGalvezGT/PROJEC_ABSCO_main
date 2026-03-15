@@ -4,13 +4,6 @@ import { Send, Loader2, CheckCircle, MapPin, Phone, Mail, User } from "lucide-re
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../components/ui/select";
 import emailjs from "@emailjs/browser";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -24,44 +17,41 @@ export const Contact = () => {
     name: "",
     email: "",
     phone: "",
-    service_type: "",
     message: "",
   });
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setFormState("loading");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormState("loading");
 
-  try {
-    await emailjs.send(
-      "service_lo77brf",
-      "template_pc3zkqf",
-      {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        service_type: formData.service_type,
-        message: formData.message,
-      },
-      "JXkbAllBs2IGgw6UK"
-    );
+    try {
+      await emailjs.send(
+        "service_lo77brf",
+        "template_pc3zkqf",
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "JXkbAllBs2IGgw6UK"
+      );
 
-    setFormState("success");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service_type: "",
-      message: "",
-    });
+      setFormState("success");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
 
-  } catch (error) {
-    console.error(error);
-    setFormState("error");
-  }
+    } catch (error) {
+      console.error(error);
+      setFormState("error");
+    }
 
-  setTimeout(() => setFormState("idle"), 5000);
-};
+    setTimeout(() => setFormState("idle"), 5000);
+  };
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -94,13 +84,7 @@ const handleSubmit = async (e) => {
 
             {/* Contact Details */}
             <div className="space-y-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="flex gap-4 items-start"
-                data-testid="contact-address"
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2, duration: 0.5 }} className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#0f111a] border border-[#1e293b] flex items-center justify-center">
                   <MapPin size={20} className="text-[#7c3aed]" />
                 </div>
@@ -113,13 +97,7 @@ const handleSubmit = async (e) => {
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                className="flex gap-4 items-start"
-                data-testid="contact-phone"
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3, duration: 0.5 }} className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#0f111a] border border-[#1e293b] flex items-center justify-center">
                   <Phone size={20} className="text-[#3b82f6]" />
                 </div>
@@ -131,13 +109,7 @@ const handleSubmit = async (e) => {
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="flex gap-4 items-start"
-                data-testid="contact-email"
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.4, duration: 0.5 }} className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#0f111a] border border-[#1e293b] flex items-center justify-center">
                   <Mail size={20} className="text-[#7c3aed]" />
                 </div>
@@ -149,13 +121,7 @@ const handleSubmit = async (e) => {
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="flex gap-4 items-start"
-                data-testid="contact-person"
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.5, duration: 0.5 }} className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#0f111a] border border-[#1e293b] flex items-center justify-center">
                   <User size={20} className="text-[#3b82f6]" />
                 </div>
@@ -218,26 +184,6 @@ const handleSubmit = async (e) => {
                     className="bg-[#02040a] border-[#1e293b] text-white placeholder:text-[#4a5568] focus:border-[#7c3aed] focus:ring-[#7c3aed]/20"
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-[#94a3b8] text-xs uppercase tracking-wider">Service Type</Label>
-                  <Select
-                    onValueChange={(val) => handleChange("service_type", val)}
-                    value={formData.service_type}
-                  >
-                    <SelectTrigger data-testid="contact-select-service" className="bg-[#02040a] border-[#1e293b] text-white focus:ring-[#7c3aed]/20">
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-[#0f111a] border-[#1e293b]">
-                      <SelectItem value="floor-cleaning" className="text-white hover:bg-[#1a1d2d]">Floor Cleaning & Polishing</SelectItem>
-                      <SelectItem value="commercial" className="text-white hover:bg-[#1a1d2d]">Commercial Cleaning</SelectItem>
-                      <SelectItem value="deep-cleaning" className="text-white hover:bg-[#1a1d2d]">Deep Cleaning</SelectItem>
-                      <SelectItem value="maintenance" className="text-white hover:bg-[#1a1d2d]">Building Maintenance</SelectItem>
-                      <SelectItem value="carpet" className="text-white hover:bg-[#1a1d2d]">Carpet & Upholstery</SelectItem>
-                      <SelectItem value="post-construction" className="text-white hover:bg-[#1a1d2d]">Post-Construction</SelectItem>
-                      <SelectItem value="other" className="text-white hover:bg-[#1a1d2d]">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
               </div>
 
               <div className="space-y-2">
@@ -266,6 +212,23 @@ const handleSubmit = async (e) => {
                 {formState === "loading" ? "Sending..." : formState === "success" ? "Message Sent!" : formState === "error" ? "Try Again" : "Send Message"}
               </button>
 
+              {formState === "success" && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-green-400 text-sm text-center"
+                  data-testid="contact-success-message"
+                >
+                  Thank you! We'll get back to you shortly.
+                </motion.p>
+              )}
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
               {formState === "success" && (
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}

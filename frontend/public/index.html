@@ -2,23 +2,31 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <!-- 🔥 FIX CLAVE PARA MÓVIL -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
         <meta name="theme-color" content="#02040a" />
         <meta name="description" content="ABSCO All Building Services Company - Professional cleaning, floor polishing, and building maintenance services in Los Angeles, CA. Commercial and residential cleaning experts." />
         <meta name="keywords" content="cleaning services Los Angeles, floor cleaning LA, commercial cleaning Los Angeles, building maintenance, floor polishing, janitorial services, ABSCO cleaning, deep cleaning Los Angeles" />
         <meta name="author" content="ABSCO All Building Services Company" />
         <meta name="robots" content="index, follow" />
+
         <meta property="og:title" content="ABSCO All Building Services Company | Professional Cleaning in LA" />
         <meta property="og:description" content="Professional cleaning and building maintenance services in Los Angeles. Floor cleaning, polishing, commercial and residential solutions." />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ABSCO All Building Services Company" />
         <meta name="twitter:description" content="Professional cleaning and building maintenance services in Los Angeles, CA." />
+
         <link rel="canonical" href="https://abscocleaning.com" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
+
         <title>ABSCO All Building Services | Professional Cleaning in Los Angeles, CA</title>
 
         <script type="application/ld+json">
@@ -63,7 +71,13 @@
 
         <div id="root"></div>
 
-        <!-- React injecta aquí el bundle cuando corres npm start -->
+        <!-- 🔥 FIX EXTRA PARA EVITAR SCROLL HORIZONTAL -->
+        <style>
+          html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+          }
+        </style>
 
         <script>
             !(function (t, e) {

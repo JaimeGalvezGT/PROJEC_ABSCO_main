@@ -9,45 +9,45 @@ const galleryPairs = [
     id: 1,
     before: "/images/gallery-01-before.jpeg",
     after: "/images/gallery-01-after.jpeg",
-    title: "Commercial Floor Restoration",
+    title: "Floor Cleaning",
   },
   {
     id: 2,
     before: "/images/gallery-02-before.jpg",
     after: "/images/gallery-02-after.jpg",
-    title: "Retail Space Deep Clean",
+    title: "Stair Carpet Cleaning",
   },
   {
     id: 3,
     before: "/images/gallery-03-before.jpeg",
     after: "/images/gallery-03-after.jpeg",
-    title: "Office Building Floor Polish",
+    title: "Carpet Cleaning",
   },
   {
     id: 4,
     before: "/images/gallery-04-before.jpeg",
     after: "/images/gallery-04-after.jpeg",
-    title: "Warehouse Floor Cleaning",
+    title: "Floor Restoration",
   },
   {
     id: 5,
     before: "/images/gallery-05-before.jpeg",
     after: "/images/gallery-05-after.jpeg",
-    title: "Lobby Floor Restoration",
+    title: "Floor Cleaning",
   },
   {
     id: 6,
     before: "/images/gallery-06-before.jpeg",
     after: "/images/gallery-06-after.jpeg",
-    title: "Kitchen Floor Deep Clean",
+    title: "Floor Cleaning",
   },
 ];
 
 // Video placeholders
 const videos = [
-  { id: 1, title: "Floor Stripping Process", src: "/videos/video1.mp4" },
-  { id: 2, title: "Polishing Technique", src: "/videos/video2.mp4" },
-  { id: 3, title: "Complete Transformation", src: "/videos/video3.mp4" },
+  { id: 1, title: "Grout Cleaning Exterior", src: "/videos/video1.mp4" },
+  { id: 2, title: "Effective Methods for Cleaning Grout", src: "/videos/video2.mp4" },
+  { id: 3, title: "Grout Cleaning", src: "/videos/video3.mp4" },
 ];
 
 const BeforeAfterSlider = ({ pair, index }) => {
